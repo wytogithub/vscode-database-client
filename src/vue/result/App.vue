@@ -80,6 +80,7 @@ export default {
         // using to clear filter input value
         filter: {},
         showColumns: [],
+        allShowColumns:[]
       },
       exportOption: {
         visible: false,
@@ -398,9 +399,11 @@ export default {
       const fields = this.result.fields;
       if (!fields) return;
       this.toolbar.showColumns = [];
+      this.toolbar.allShowColumns = [];
       for (let i = 0; i < fields.length; i++) {
         if (!fields[i].name) continue;
         this.toolbar.showColumns.push(fields[i].name.toLowerCase());
+        this.toolbar.allShowColumns.push(fields[i].name.toLowerCase());
       }
     },
     // show call when load same table data

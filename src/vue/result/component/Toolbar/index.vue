@@ -72,10 +72,10 @@ export default {
 .el-pagination {
   padding: 0;
 }
->>> .el-input{
+.el-input{
   bottom: 2px;
 }
->>> .el-input--mini .el-input__inner{
+.el-input--mini .el-input__inner{
   height: 24px;
 }
 

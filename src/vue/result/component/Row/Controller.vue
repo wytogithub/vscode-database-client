@@ -1,11 +1,11 @@
 <template>
 <div>
-  <el-popover placement="bottom" title="Select columns to show" width="200" trigger="click" type="primary">
+  <el-popover placement="bottom" title="Select columns to show" width="300" trigger="click" type="primary">
     <el-checkbox-group v-model="toolbar.showColumns">
-      <el-checkbox v-for="(column,index) in result.fields" :label="column.name" :key="index">
-        {{ column.name }}
+      <el-checkbox v-for="(column,index) in toolbar.allShowColumns" :label="column" :key="index" style="display:block;">
+        {{ column }}
       </el-checkbox>
-    </el-checkbox-group>
+    </el-checkbox-group> 
     <el-button icon="el-icon-search" circle title="Select columns to show" size="mini" slot="reference">
     </el-button>
   </el-popover>
