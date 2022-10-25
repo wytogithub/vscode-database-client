@@ -13,7 +13,7 @@
           <span class='null-column'>(NULL)</span>
         </template>
         <template v-else>
-          <el-tooltip class="edit-column" open-delay="1000" effect="dark" :content="dataformat(scope.row[scope.column.title])" placement="top-start">
+          <el-tooltip class="edit-column" :open-delay=1000 effect="dark" :content="dataformat(scope.row[scope.column.title])" placement="top-start">
             <span v-text='dataformat(scope.row[scope.column.title])'></span>
           </el-tooltip>
         </template>
