@@ -396,14 +396,17 @@ export default {
     },
 
     initShowColumn() {
-      const fields = this.result.columnList;
+      const fields = this.result.fields;
       if (!fields) return;
       this.toolbar.showColumns = [];
       this.toolbar.allShowColumns = [];
+      let column_name_dict = {}
+      this.result.columnList.map(item=>column_name_dict[item.name.toLowerCase()] = item.comment)
       for (let i = 0; i < fields.length; i++) {
         if (!fields[i].name) continue;
-        this.toolbar.showColumns.push(fields[i].name.toLowerCase());
-        this.toolbar.allShowColumns.push({name: fields[i].name.toLowerCase(),comment: fields[i].comment});
+        let field = fields[i].name.toLowerCase()
+        this.toolbar.showColumns.push(field);
+        this.toolbar.allShowColumns.push({name: field,comment: column_name_dict[field]});
       }
     },
     // show call when load same table data
